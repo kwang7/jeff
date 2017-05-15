@@ -1,7 +1,5 @@
 class Ball{
   //instance vars
-  //Ball[] bobo;
-  
   float x;
   float y;
   float rad;
@@ -20,7 +18,7 @@ class Ball{
     y = random((height-r) + r/2);
     dx = random(10) -5;
     dy = random(10) -5;
-    state = 1;
+    state = 0;
   }
   
   void move() {
@@ -36,5 +34,23 @@ class Ball{
     if ( y > height || y < 0) {
       dy = -dy;
     }
+  }
+  
+  void startReacc() {
+     if ( mousePressed ) {
+       grow();
+       state = 1;
+     }
+  }
+  
+  void grow() {
+     rad = rad+1;
+     if ( rad == 50 ) {
+       shrink();
+     }
+  }
+  
+  void shrink() {
+     rad = rad-1; 
   }
 }
