@@ -14,8 +14,15 @@ void setup(){
 void draw(){
     background(0);
     for ( int i = 0; i < bobo.length; i++ ) {
-        Ball bo = bobo[i];
-      bo.print();
+      Ball bo = bobo[i];
+      if(mousePressed){
+        reacc = true;
+      }
+      if( reacc == true ){
+        bo.grow();
+        bo.initiateGrowth(bobo);
+      }
       bo.move();
+      bo.print();
     }
 }
