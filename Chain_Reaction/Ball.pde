@@ -64,5 +64,8 @@ class Ball{
     }
   }
   
-  
+    void print() {
+     fill( c);
+     ellipse( x, y, x+rad, y+rad );
+  }
 }
