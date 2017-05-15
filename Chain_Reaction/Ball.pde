@@ -53,4 +53,16 @@ class Ball{
   void shrink() {
      rad = rad-1; 
   }
+  
+  void initiateGrowth(Ball[] ballz){
+    if( state == 0 ){ //hasn't collided with anything yet
+      for(Ball bob: ballz){
+        if( bob.state == 1 && dist(bob.x, bob.y, x, y) < (bob.rad + rad)){
+          state = 1;
+        }
+      }
+    }
+  }
+  
+  
 }
